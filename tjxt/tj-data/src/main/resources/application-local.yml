@@ -1,0 +1,22 @@
+﻿spring:
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+      discovery:
+        #namespace: f923fb34-cb0a-4c06-8fca-ad61ea61a3f0
+        group: DEFAULT_GROUP
+        ip: 127.0.0.1
+  config:
+    import:
+      - nacos:${spring.application.name}.yaml
+      - nacos:shared-spring.yaml
+      - nacos:shared-redis.yaml
+      - nacos:shared-mybatis.yaml
+      - nacos:shared-logs.yaml
+      - nacos:shared-feign.yaml
+      - nacos:shared-mq.yaml
+logging:
+  level:
+    com.tianji: debug

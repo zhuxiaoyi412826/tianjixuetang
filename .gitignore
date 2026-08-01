@@ -1,0 +1,117 @@
+node_modules/
+# =======================
+# OS generated files
+# =======================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# =======================
+# IDE / Editor
+# =======================
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+.c9replc
+.settings/
+.atlassian/
+target/
+
+# =======================
+# Java / Maven
+# =======================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# =======================
+# Logs
+# =======================
+*.log
+logs/
+log/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =======================
+# Node.js / Frontend
+# =======================
+node_modules/
+dist/
+dist-ssr/
+*.local
+.cache/
+.vuepress/dist
+.vuepress/cache
+.temp/
+.temp
+
+# =======================
+# Environment configs
+# =======================
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# =======================
+# Build outputs
+# =======================
+build/
+out/
+gen/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# =======================
+# Package files
+# =======================
+*.tgz
+*.gz
+*.zip
+
+# =======================
+# Python (if any)
+# =======================
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+
+# =======================
+# Docker
+# =======================
+docker-compose.override.yml
+
+# =======================
+# Nacos
+# =======================
+nacos-server-2.3.0/
+
+# 密钥配置文件
+application-dev.yml
+*.secret
+.env

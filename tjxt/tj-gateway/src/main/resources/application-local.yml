@@ -1,0 +1,34 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+      discovery:
+        #namespace: f923fb34-cb0a-4c06-8fca-ad61ea61a3f0
+        group: DEFAULT_GROUP
+        ip: 127.0.0.1
+  config:
+    import:
+      - nacos:shared-spring.yaml
+      - nacos:shared-redis.yaml
+      - nacos:shared-mybatis.yaml
+      - nacos:shared-logs.yaml
+      - nacos:shared-feign.yaml
+tj:
+  auth:
+    exclude-path:
+      - /auth/login
+      - /auth/register
+      - /auth/sms/send
+      - /auth/sms/verify
+      - /auth/code/image
+      - /auth/code/sms
+      - /api/**
+      - /swagger-ui/**
+      - /v3/api-docs/**
+      - /webjars/**
+      - /error
+logging:
+  level:
+    com.tianji: debug

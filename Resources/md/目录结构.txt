@@ -1,0 +1,150 @@
+tianjixuetang/
+│
+├── 📁 Resources/                        # 资源文件
+│   ├── img/
+│   │   └── image.png
+│   └── md/
+│       ├── SQL_AI.txt
+│       ├── 中英文对照.txt
+│       ├── 后端服务下载链接.txt
+│       ├── 后端服务配置.txt
+│       └── 项目.md
+│
+├── 📁 md/                                # 项目文档
+│   └── 启动后端项目流程.md
+│
+├── 📁 tj-portal-src-master/              # 🖥️ 前端项目 (Vue3 + Vite)
+│   ├── public/
+│   │   └── favicon.ico
+│   ├── src/
+│   │   ├── api/                          # API 接口定义
+│   │   │   ├── class.js
+│   │   │   ├── classDetails.js
+│   │   │   ├── intelligent.js
+│   │   │   ├── notes.js
+│   │   │   ├── order.js
+│   │   │   ├── subject.js
+│   │   │   └── user.js
+│   │   ├── assets/                       # 静态资源
+│   │   │   ├── icon/                     # 图标 (20+ SVG/PNG)
+│   │   │   ├── banner*.jpg               # 轮播图
+│   │   │   └── ...                       # 其他素材
+│   │   ├── components/                   # 公共组件
+│   │   │   ├── result/index.vue
+│   │   │   ├── Breadcrumb.vue
+│   │   │   ├── ClassCards.vue
+│   │   │   ├── CouponCards.vue
+│   │   │   ├── Empty.vue
+│   │   │   ├── Footer.vue
+│   │   │   ├── Header.vue
+│   │   │   └── MainTitle.vue
+│   │   ├── config/
+│   │   │   ├── global.js
+│   │   │   ├── proxy.js
+│   │   │   └── style.js
+│   │   ├── pages/                        # 页面组件
+│   │   │   ├── ask/                      # 问答
+│   │   │   ├── classDetails/             # 课程详情
+│   │   │   ├── classList/                # 课程列表
+│   │   │   ├── classSearch/              # 课程搜索
+│   │   │   ├── layouts/                  # 布局
+│   │   │   ├── learning/                 # 学习
+│   │   │   ├── login/                    # 登录
+│   │   │   ├── main/                     # 首页
+│   │   │   ├── pay/                      # 支付 (5个页面)
+│   │   │   ├── personal/                 # 个人中心
+│   │   │   └── result/                   # 结果页
+│   │   ├── router/                       # 路由
+│   │   │   ├── modules/
+│   │   │   │   ├── base.js
+│   │   │   │   └── others.js
+│   │   │   └── index.js
+│   │   ├── store/                        # 状态管理 (Pinia)
+│   │   │   ├── modules/
+│   │   │   │   ├── dataCache.js
+│   │   │   │   ├── permission.js
+│   │   │   │   └── user.js
+│   │   │   └── index.js
+│   │   ├── style/                        # 样式
+│   │   ├── utils/                        # 工具函数
+│   │   ├── App.vue
+│   │   ├── main.js
+│   │   └── permission.js
+│   ├── .gitignore
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+│
+├── 📁 tjxt/                              # ⚙️ 后端微服务项目 (Spring Boot 3.3.5)
+│   │
+│   ├── 🔧 公共模块
+│   │   ├── tj-common/                    # 公共工具类
+│   │   └── tj-api/                       # API 接口定义
+│   │
+│   ├── 🔐 认证服务
+│   │   └── tj-auth/
+│   │       ├── tj-auth-common/
+│   │       ├── tj-auth-gateway-sdk/
+│   │       ├── tj-auth-resource-sdk/
+│   │       └── tj-auth-service/          # 认证服务主体
+│   │
+│   ├── 🚪 网关服务
+│   │   └── tj-gateway/                   # 端口: 10010
+│   │
+│   ├── 👤 用户服务
+│   │   └── tj-user/
+│   │
+│   ├── 📚 课程服务
+│   │   └── tj-course/
+│   │
+│   ├── 📖 学习服务
+│   │   └── tj-learning/
+│   │
+│   ├── 🎬 媒体服务
+│   │   └── tj-media/
+│   │
+│   ├── 🔍 搜索服务
+│   │   └── tj-search/
+│   │
+│   ├── 🛒 交易服务
+│   │   └── tj-trade/
+│   │
+│   ├── 💳 支付服务
+│   │   └── tj-pay/
+│   │       ├── tj-pay-api/
+│   │       ├── tj-pay-domain/
+│   │       └── tj-pay-service/
+│   │
+│   ├── 📋 考试服务
+│   │   └── tj-exam/
+│   │
+│   ├── 🎟️ 促销服务
+│   │   └── tj-promotion/
+│   │
+│   ├── 💬 评论服务
+│   │   └── tj-remark/
+│   │
+│   ├── 📊 数据服务
+│   │   └── tj-data/
+│   │
+│   ├── ✉️ 消息服务
+│   │   └── tj-message/
+│   │       ├── tj-message-api/
+│   │       ├── tj-message-domain/
+│   │       └── tj-message-service/
+│   │
+│   ├── 🤖 AI 智能服务
+│   │   └── tj-aigc/                      # 端口: 8094
+│   │       └── src/main/resources/sql/
+│   │           ├── chat_record.sql
+│   │           └── mongodb.txt
+│   │
+│   ├── .gitignore
+│   ├── Dockerfile
+│   ├── pom.xml                           # 父工程 POM
+│   └── startup.sh
+│
+├── .gitignore
+└── README.md

@@ -1,0 +1,40 @@
+192.168.150.101 git.tianji.com
+192.168.150.101 jenkins.tianji.com
+192.168.150.101 mq.tianji.com
+192.168.150.101 nacos.tianji.com
+192.168.150.101 xxljob.tianji.com
+192.168.150.101 es.tianji.com
+192.168.150.101 api.tianji.com
+192.168.150.101 www.tianji.com
+192.168.150.101 manage.tianji.com
+192.168.150.101 cpolar.tianji.com
+每个域名对应的服务列表如下：
+名称	域名	账号	端口
+Git私服	git.tianji.com	tjxt/123321	10880
+Jenkins持续集成	jenkins.tianji.com	root/123	18080
+RabbitMQ	mq.tianji.com	tjxt/123321	15672
+Nacos控制台	nacos.tianji.com	nacos/nacos	8848
+xxl-job控制台	xxljob.tianji.com	admin/123456	8880
+ES的Kibana控制台	es.tianji.com	-	5601
+微服务网关	api.tianji.com	-	10010
+用户端入口	www.tianji.com	-	18081
+管理端入口	manage.tianji.com	-	18082
+
+微服务名称
+微服务名称	功能描述
+tj-parent	父工程
+tj-common	通用工程
+tj-message	消息中心
+tj-gateway	网关
+tj-auth	权限服务
+tj-user	用户服务
+tj-pay	支付服务
+tj-course	课程服务
+tj-exam	考试服务
+tj-search	搜索服务
+tj-trade	交易服务
+tj-learning	学习服务
+tj-promotion	促销服务
+tj-media	媒资服务
+tj-data	数据服务
+tj-remark	评价服务
