@@ -1,5 +1,0 @@
-1. 黑马springcloud
-2. 电脑内存32G
-3. 基础掌握 XXL-Job setae redis rabbitmq MongoDB ES 基础知识要掌握 
-4. Spring Boot 3.x  SpringAI RAG 
-需要掌握上述知识才能接着学习这个项目

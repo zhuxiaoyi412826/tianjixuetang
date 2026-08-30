@@ -1,0 +1,66 @@
+﻿==============================================
+  天机学堂微服务 - 一键启动/关闭脚本使用说明
+==============================================
+
+【文件说明】
+  start-all.ps1   一键启动脚本
+  stop-all.ps1    一键关闭脚本
+
+【前置条件】
+  1. 已安装: JDK 17, MySQL(3306), Redis(6379)
+     - MySQL / Redis 需自行先启动（脚本不管理它们）
+  2. 脚本会自动启动: Nacos(8848) → Elasticsearch(9200) → RabbitMQ(5672)
+     - 依赖路径（如与你的安装位置不同，请修改脚本开头的路径变量）:
+       Nacos:  D:\software\nacos\bin\startup.cmd
+       ES:     D:\software\Elasticsearch\elasticsearch-7.12.1-...\bin\elasticsearch.bat
+       RabbitMQ: D:\software\rabbitmq\rabbitmq-server-windows-3.12.13\...
+  3. 数据库表结构已初始化（sql 目录 / Resources\sql 目录）
+  4. Nacos 中已发布各服务配置（shared-*.yaml 及各服务 .yaml）
+
+【使用方法 - 启动】
+  方式一（推荐，无需改系统设置）:
+     powershell -ExecutionPolicy Bypass -File "d:\daima\待学习\tianjixuetang\Resources\bin\start-all.ps1"
+
+  方式二（先切到目录）:
+     cd d:\daima\待学习\tianjixuetang\Resources\bin
+     .\start-all.ps1
+     （若提示禁止运行脚本: Set-ExecutionPolicy -Scope CurrentUser Bypass）
+
+  启动流程:
+     [1/5] Nacos          -> 未运行则自动启动并等待 8848
+     [2/5] Elasticsearch  -> 未运行则自动启动并等待 9200
+     [3/5] RabbitMQ       -> 未运行则自动启动并检查 5672
+     [4/5] 13 个微服务    -> 按顺序启动（内存限制 -Xmx512m）
+     [5/5] 验证           -> 打印 Nacos 注册结果
+  整个流程约 1-2 分钟，各服务日志在: d:\daima\待学习\tianjixuetang\logs\
+
+  前端（可选，另开一个窗口）:
+     cd d:\daima\待学习\tianjixuetang\tj-portal-src-master
+     npm install   (首次)
+     npm run dev   -> 访问 http://localhost:18082
+
+【使用方法 - 关闭】
+     powershell -ExecutionPolicy Bypass -File "d:\daima\待学习\tianjixuetang\Resources\bin\stop-all.ps1"
+
+  关闭顺序:
+     [1/5] 前端(18082)
+     [2/5] 13 个微服务
+     [3/5] RabbitMQ (rabbitmqctl stop)
+     [4/5] Elasticsearch
+     [5/5] Nacos
+  注意: MySQL / Redis 不会被关闭（保留运行）
+
+【测试账号】
+  前台门户(学员): 13500010003 / 123   (jack)
+  admin(管理端):  13500010002 / admin
+
+【常见问题】
+  1. 内存不足导致服务被杀:
+     脚本已对所有服务限制 -Xmx512m，请勿同时运行 SonarQube 等大程序
+  2. ES 无课程索引(搜索接口 500):
+     RabbitMQ 就绪后执行:
+     curl -X POST "http://127.0.0.1:10010/ss/courses/up?courseIds=1,2,3,4,5,6,7,10,1549025085494521857,1552558707325374467,1589888774267072513,1589905661084430337"
+     或直接访问 knife4j 文档触发
+  3. 端口占用:
+     启动前可执行: netstat -ano | findstr "10010 8081 8082"
+==============================================
